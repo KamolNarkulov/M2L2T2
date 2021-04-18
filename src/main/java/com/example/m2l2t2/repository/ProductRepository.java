@@ -14,6 +14,5 @@ import org.springframework.data.rest.core.annotation.RestResource;
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     @RestResource(path = "byPrice")
-    //@RequestMapping(value = "/byPrice", method = RequestMethod.GET)
     Page<Product> findAllByPrice(@Param("price") double price , Pageable pageable);
 }
